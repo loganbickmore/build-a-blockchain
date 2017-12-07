@@ -55,7 +55,7 @@ func (pow *ProofOfWork) Run() (int, []byte) {
 		data := pow.prepareData(nonce)
 
 		hash = sha256.Sum256(data)
-		fmt.Printf("\rnonce:%d -> %x", nonce, hash)
+		//fmt.Printf("\rnonce:%d -> %x", nonce, hash)
 		hashInt.SetBytes(hash[:])
 
 		if hashInt.Cmp(pow.target) == -1 {
